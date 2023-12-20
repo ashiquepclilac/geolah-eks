@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react-app  # Update this to match the labels in the template
+  template:
+    metadata:
+      labels:
+        app: react-app  # Update this to match the selector
+    spec:
+      containers:
+      - name: react-app
+        image: 882912265397.dkr.ecr.ap-southeast-1.amazonaws.com/geolah_reactapp_main:latest
